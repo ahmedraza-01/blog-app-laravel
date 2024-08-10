@@ -5,9 +5,10 @@
             @if ($post->image)
             <img src="{{ asset('storage/image/' . $post->image) }}" alt="Post picture" class="mt-4 mb-4 w-100 h-100 object-fit-cover">
             @endif
+            <p style="text-align: end"><b>Published by </b> {{ $userName }}</p>
             <h1 class="h2 font-weight-bold mb-4 mt-4">{{ $post->title }}</h1>
             <p> <?=$post->body?> </p>
-            @if (Auth::id() == $post->user_id || Auth::user()->hasRole('admin')) 
+           
             
             <div class="d-flex gap-3 mt-4">
                 <a href="{{ route('posts.edit', $post->id) }}" class="text-primary">Edit</a>
@@ -17,7 +18,7 @@
                     <button type="submit" class="text-danger btn btn-link p-0">Delete</button>
                 </form>
             </div>
-            @endif
+        
         </div>
     </div>
     @endsection
