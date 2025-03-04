@@ -5,6 +5,7 @@
             @if ($post->image)
             <img src="{{ asset('storage/image/' . $post->image) }}" alt="Post picture" class="mt-4 mb-4 w-100 h-100 object-fit-cover">
             @endif
+            <p style="text-align: end"><b>Published by </b> {{ $userName }}</p>
             <h1 class="h2 font-weight-bold mb-4 mt-4">{{ $post->title }}</h1>
             <p> <?=$post->body?> </p>
            

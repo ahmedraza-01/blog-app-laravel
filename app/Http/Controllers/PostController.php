@@ -74,8 +74,8 @@ class PostController extends Controller
    
     public function show(Post $post)
     {
-        
-        return view('posts.show', compact('post'));
+        $userName = $post->user->name;
+        return view('posts.show', compact('post','userName'));
     }
 
     public function edit(Post $post)
